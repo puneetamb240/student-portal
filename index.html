@@ -1,0 +1,176 @@
+<!Doctype html>
+<head>
+    <title>Student detail Portal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/myjs.js"></script>
+
+</head>
+<body>
+    <div class="main" >
+        <div class="header">
+            <h1 class="text-center">Student Details Portal</h1>
+            <p style="text-align:right">....Student details management made easy</p>
+        </div>
+        <div class="content">
+          <div class="row">
+            <div class="col-sm-3">
+                <ul class="nav nav-stacked" id="accordion1">
+                    <li class="panel" onclick="swap(i1)"><a   data-toggle="collapse" href="#first" >Engineering<i class="fa fa-caret-right" id="i1" area-hidden="true"></i></a></li>
+
+                    <li class="panel" onclick="swap(i2)"><a data-toggle="collapse" href="#second">Commerce<i class="fa fa-caret-right" id="i2"></i></a></li>
+
+                    <li class="panel" onclick="swap(i3)"><a data-toggle="collapse"  href="#m">Mass Communication<i class="fa fa-caret-right" id='i3' ></i></a></li>
+                    <ul id="mass" class="collapse">
+                        <li>CN1591472</li>
+                        <li>CN1591627</li>
+                        <li>CN1346874</li>
+                        <li>CN2015471</li>
+                        <li>CN3697415</li>
+                        <li>CN4657813</li>
+                        <li>CN7412365</li>
+                    </ul>
+                    <li class="panel" onclick="swap(i4)"><a data-toggle="collapse" href="#">Architecture<i class="fa fa-caret-right" id="i4"></i></a></li>
+                    <ul id="arch" class="collapse">
+                        <li>B157456</li>
+                        <li>B197720</li>
+                        <li>B123741</li>
+                        <li>B164752</li>
+                        <li>B367412</li>
+                        <li>B697415</li>
+                        <li>B991031</li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="col-sm-9">
+             <div id="first" class="collapse" >
+                <div class="heading">
+                    <div class="col-sm-8">
+                        <h2 style="display:inline">Engineering</h2>
+                    </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-default" onclick="changeB()" data-toggle="modal" data-target="#mymodal">Add new record</button>
+                </div>
+
+                <div class="col-sm-2">
+                    <button class="btn btn-default" onclick="del(eng)">Delete all records</button>
+                 </div>
+                </div>
+                <br>
+                <table id="eng" class="table">
+                    <thead>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Email Id</th>
+                        <th>Stream</th>
+                        <th>Year of study</th>
+                        <th></th>
+
+                    </thead>
+                    <tbody style="overflow-y:scroll; height:10px;">
+                     <tr id="first">
+                        <td>1510991477</td>
+                        <td>Puneet Jain</td>
+                        <td>20</td>
+                        <td>puneetjain.amb@gmail.com</td>
+                        <td>CSE</td>
+                        <td>3</td>
+                        <td id="mybt"><button class="btn btn-default" data-toggle="modal" data-target="#mymodal" onclick="edit(this)"><i class="fa fa-pencil"></i></button>
+                         <button class="btn btn-default" onclick="delR(this)"><i class="fa fa-times" ></i></button></td>
+                    </tr>
+                        <tr>
+                        <td>1510991031</td>
+                        <td>Aditya Sanghi</td>
+                        <td>20</td>
+                        <td>adityasanghi96@gmail.com</td>
+                        <td>CSE</td>
+                        <td value="3">3</td>
+                        <td><button class="btn btn-default" data-toggle="modal" data-target="#mymodal" onclick="edit(this)"><i class="fa fa-pencil"></i></button>
+                         <button class="btn btn-default" onclick="delR(this)"><i class="fa fa-times"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td>1510991034</td>
+                        <td>Airish</td>
+                        <td>20</td>
+                        <td>airishgupta97@gmail.com</td>
+                        <td>CSE</td>
+                        <td>3</td>
+                        <td><button class="btn btn-default" data-toggle="modal" data-target="#mymodal" onclick="edit(this)"><i class="fa fa-pencil"></i></button>
+                         <button class="btn btn-default" onclick="delR(this)"><i class="fa fa-times"></i></button></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="mymodal" class="modal fade" role="dialog" style="color: black;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" id="out" data-dismiss="modal">&times;</button>
+                            <h1 class="modal-title">Enter details</h1>
+                        </div>
+                         <form>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="Name">Name:<sup>*</sup></label>
+                                    <input type="text" required="required" name="name" id="name" placeholder="Enter Name" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="roll">RollNo:<sup>*</sup></label>
+                                    <input type="text" required="required" name="roll" id="roll" placeholder="Enter Rollno" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:<sup>*</sup></label>
+                                    <input type="email" required="required"name="email" id="email" placeholder="Enter  Email" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="age">Age:<sup>*</sup></label>
+                                    <input type="number" required="required"
+                                    name="age" id="age" placeholder="Enter Age" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="stream">Stream:<sup>*</sup></label>
+                                    <input type="text" required="required"
+                                    name="stream" id="stream" placeholder="Stream" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="year">Year Of Study:<sup>*</sup></label>
+                                    <input type="number" required="required"
+                                    name="year" id="year" placeholder="Enter Year Of Study" class="form-control">
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <p style="float: left;display: inline"><b>Note:</b>Marked fields are compulsory.</p>
+                            <button type="button" class="btn btn-default hide"  id="sub" onclick="myfun()">Submit</button>
+                            <button type="button" class="btn btn-default hide" id="last" >Save</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal" >Cancel</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+     </div>
+     <footer class="text-center">Page Developed By :
+         <a href="portfolio page.html" target="_blank">Puneet Jain</a></footer>
+         <button class="collapse" id="mysuccess"  data-toggle="modal" data-target="#succ"></button>
+          <div id="succ" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text-center"><i class="fa fa-pencil fa-4x text-center"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

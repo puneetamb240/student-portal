@@ -1,0 +1,43 @@
+body
+{
+    font-family: sofia;
+}
+ul,ol{
+    list-style: none;
+}
+a[target="#info"]
+{
+    text-decoration: none;
+    color: white;
+}
+a{
+    display: inline;
+}
+.header
+{
+    background-color:#eee;
+    color:#555;
+    padding:20px 10px;
+    width:100%;
+}
+h2{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+table
+{
+    margin-top: 55px;
+    max-height: 220px;
+    width:100%;
+    overflow-y: scroll;
+    display:inline-block;
+}
+/*table{
+   overflow-y:scroll;
+   height:100px;
+}*/
+.content{
+    padding:50px 10px;
+    background-color:#776262;
+    color:white;
+}
